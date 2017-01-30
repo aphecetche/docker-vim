@@ -8,13 +8,9 @@ BASE16_SHELL=/root/base16-shell
 
 script=$BASE16_SHELL/scripts/$BASE16_THEME.sh
 
-echo "script=$script"
-
 if test -f $script; then
 	. $script
-	#eval $script
 	echo -e "if \0041exists('g:colors_name') || g:colors_name != '$BASE16_THEME'\n  colorscheme $BASE16_THEME\nendif" >| ~/.vimrc_background
-
 	cat ~/.vimrc_background
 fi
 
