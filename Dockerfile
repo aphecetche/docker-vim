@@ -33,7 +33,6 @@ RUN mkdir -p /root/.config/nvim/autoload \
  && cmake --build . --target ycm_core \
  && cd /root/.config/nvim/plugged/YouCompleteMe \
  && rm -rf build \
- && chmod 644 /root/.viminfo \
  && apk del build-deps \
  && git clone --depth=1 https://github.com/chriskempson/base16-shell /root/base16-shell
 

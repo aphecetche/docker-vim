@@ -14,5 +14,5 @@ if test -f $script; then
 	cat ~/.vimrc_background
 fi
 
-vim "$@"
+vim -i NONE "$@"
 
