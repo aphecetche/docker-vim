@@ -34,15 +34,12 @@ RUN mkdir -p /root/.config/nvim/autoload \
  && cd /root/.config/nvim/plugged/YouCompleteMe \
  && rm -rf build \
  && apk del build-deps \
- && git clone --depth=1 https://github.com/chriskempson/base16-shell /root/base16-shell
-
-RUN mv /root/.config/nvim/autoload/* /usr/share/vim/vim80/autoload \
-&& mv /root/.config/nvim/plugged /usr/share/vim/ \
-&& mv /root/.config/nvim/init.vim /usr/share/vim/vimrc
-
-RUN sed -i 's_~/.config/nvim_/usr/share/vim/_g' /usr/share/vim/vimrc
-
-RUN rm -rf /root/.vim* /root/.config
+ && git clone --depth=1 https://github.com/chriskempson/base16-shell /root/base16-shell \
+ && mv /root/.config/nvim/autoload/* /usr/share/vim/vim80/autoload \
+ && mv /root/.config/nvim/plugged /usr/share/vim/ \
+ && mv /root/.config/nvim/init.vim /usr/share/vim/vimrc \
+ && sed -i 's_~/.config/nvim_/usr/share/vim/_g' /usr/share/vim/vimrc \
+ && rm -rf /root/.vim* /root/.config
 
 COPY vim.sh /usr/local/bin/vim.sh
 
