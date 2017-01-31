@@ -21,8 +21,6 @@ RUN mkdir -p /root/.config/nvim/autoload \
  && curl -O https://raw.githubusercontent.com/aphecetche/dotfiles/master/config/nvim/init.vim \
  && cd autoload \
  && curl -O https://raw.githubusercontent.com/aphecetche/dotfiles/master/config/nvim/autoload/plug.vim \
- && cd /root/.config/ycm \
- && curl -O https://raw.githubusercontent.com/aphecetche/dotfiles/master/config/ycm/ycm_extra_conf.py \
  && ln -s /root/.config/nvim/init.vim /root/.vimrc \
  && ln -s /root/.config/nvim /root/.vim \
  && vim --not-a-term -c "PlugInstall! | qall!" \
