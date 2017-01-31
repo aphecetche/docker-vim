@@ -2,9 +2,9 @@ FROM alpine:3.5
 
 RUN mkdir -p /root/.config/nvim/autoload \
  && mkdir -p /root/.config/ycm \
- && apk add --update clang git python ctags ncurses libxt libx11 libstdc++ \
+ && apk add --update clang git python ctags ncurses libxt libx11 libstdc++ nodejs \
  && apk add --virtual build-deps curl python-dev cmake build-base \
-    make libxpm-dev libx11-dev libxt-dev ncurses-dev nodejs \
+    make libxpm-dev libx11-dev libxt-dev ncurses-dev \
  && cd /tmp \
  && git clone --depth=1 https://github.com/vim/vim \
  && cd /tmp/vim \
