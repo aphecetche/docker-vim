@@ -4,7 +4,7 @@ RUN mkdir -p /root/.config/nvim/autoload \
  && mkdir -p /root/.config/ycm \
  && apk add --update clang git python ctags ncurses libxt libx11 libstdc++ \
  && apk add --virtual build-deps curl python-dev cmake build-base \
-    make libxpm-dev libx11-dev libxt-dev ncurses-dev \
+    make libxpm-dev libx11-dev libxt-dev ncurses-dev nodejs \
  && cd /tmp \
  && git clone --depth=1 https://github.com/vim/vim \
  && cd /tmp/vim \
@@ -39,7 +39,8 @@ RUN mkdir -p /root/.config/nvim/autoload \
  && mv /root/.config/nvim/plugged /usr/share/vim/ \
  && mv /root/.config/nvim/init.vim /usr/share/vim/vimrc \
  && sed -i 's_~/.config/nvim_/usr/share/vim/_g' /usr/share/vim/vimrc \
- && rm -rf /root/.vim* /root/.config
+ && rm -rf /root/.vim* /root/.config \
+ && npm install -g livedown
 
 COPY vim.sh /usr/local/bin/vim.sh
 
