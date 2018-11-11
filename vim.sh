@@ -12,5 +12,10 @@ if test -f $script; then
 	. $script
 fi
 
+if test -d /go; then
+    export GOROOT=/go
+    export PATH=$PATH:$GOROOT/bin
+fi
+
 vim -i NONE "$@"
 
